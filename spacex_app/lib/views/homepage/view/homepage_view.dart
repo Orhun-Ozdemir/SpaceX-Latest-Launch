@@ -78,11 +78,6 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           sizedBox(5),
-                          Image.network(
-                            image!,
-                            width: deviceWidth * 4 / 10,
-                            height: deviceWidth * 4 / 10,
-                          ),
                           sizedBox(5),
                           Container(
                             margin: EdgeInsets.symmetric(
@@ -118,6 +113,12 @@ class _HomePageState extends State<HomePage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
+                                  Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text("SPACEX LATEST LAUNCH "),
+                                    ),
+                                  ),
                                   Container(
                                     padding: EdgeInsets.symmetric(vertical: 10),
                                     decoration: BoxDecoration(),
@@ -145,8 +146,10 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   ImageSlideshow(
-                                    width: deviceWidth,
-                                    height: deviceHeight * 3.5 / 10,
+                                    width: double.infinity,
+                                    height: MediaQuery.of(context).size.height *
+                                        3.4 /
+                                        10,
                                     children: resim,
                                   ),
                                   Container(
@@ -202,7 +205,12 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                          sizedBox(5)
+                          sizedBox(5),
+                          Image.network(
+                            image!,
+                            width: MediaQuery.of(context).size.width * 4 / 10,
+                            height: MediaQuery.of(context).size.width * 4 / 10,
+                          ),
                         ],
                       ),
                     );
@@ -219,9 +227,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  SizedBox sizedBox(double height) {
+  SizedBox sizedBox(double size) {
     return SizedBox(
-      height: height,
+      height: size,
     );
   }
 }
