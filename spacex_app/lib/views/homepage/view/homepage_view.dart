@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:spacex_app/base/base_event.dart';
-import 'package:spacex_app/base/base_state.dart';
+import 'package:spacex_app/base/bloc_base/base_event.dart';
+import 'package:spacex_app/base/bloc_base/base_state.dart';
 import 'package:spacex_app/base/const/const.dart';
 import 'package:spacex_app/views/homepage/model/homepage_model.dart';
 import 'package:spacex_app/views/homepage/viewmodel/homepage_bloc.dart';
@@ -82,7 +82,6 @@ class _HomePageState extends State<HomePage> {
                           Container(
                             margin: EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 5),
-                            //height: MediaQuery.of(context).size.height * 6.6 / 10,
                             width: MediaQuery.of(context).size.width,
                             child: Container(
                               padding: EdgeInsets.all(10),
@@ -115,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Center(
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.all(5),
                                       child: Text("SPACEX LATEST LAUNCH "),
                                     ),
                                   ),
@@ -147,9 +146,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   ImageSlideshow(
                                     width: double.infinity,
-                                    height: MediaQuery.of(context).size.height *
-                                        3.4 /
-                                        10,
+                                    height: ScreenSize.height(3.5, context),
                                     children: resim,
                                   ),
                                   Container(
@@ -208,9 +205,10 @@ class _HomePageState extends State<HomePage> {
                           sizedBox(5),
                           Image.network(
                             image!,
-                            width: MediaQuery.of(context).size.width * 4 / 10,
-                            height: MediaQuery.of(context).size.width * 4 / 10,
+                            width: ScreenSize.width(4, context),
+                            height: ScreenSize.width(4, context),
                           ),
+                          sizedBox(5),
                         ],
                       ),
                     );

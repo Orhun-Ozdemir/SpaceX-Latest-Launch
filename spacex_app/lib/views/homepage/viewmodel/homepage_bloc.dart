@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:spacex_app/base/base_event.dart';
-import 'package:spacex_app/base/base_state.dart';
+import 'package:spacex_app/base/bloc_base/base_event.dart';
+import 'package:spacex_app/base/bloc_base/base_state.dart';
 import 'package:spacex_app/model/spacex_model.dart';
 import 'package:spacex_app/views/homepage/model/homepage_model.dart';
 
